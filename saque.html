@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>documents</title>
+
+    <style>
+        .saque {
+            background-color: rgb(13, 26, 210);
+            margin: center;
+            width: 500px;
+            margin-left: 30%;
+            color: white;
+            height: 300px;
+            padding: 5px;
+            margin-top: 8%;
+        }
+
+        .titulo {
+            background-color: rgb(20, 10, 130);
+
+        }
+
+        h1 {
+            color: rgb(255, 255, 255);
+            margin-left: 47%;
+        }
+
+        input {
+            margin-left: 40px;
+
+        }
+    </style>
+</head>
+
+<body style="background-color:black">
+
+    <div class="titulo">
+        <h1> Saque </h1>
+    </div>
+    <div class="saque">
+        <h2>Valor do saque em reais:</h2>
+        <input type="text" name="valor" id="valor" min="1" value="">
+        <h2>Saldo:</h2>
+        <input type="text" name="saldo" id="saldo" value="5000" required>
+        <button type="submit" value="Sacar" onclick="sacar()"> SAQUE</button>
+
+    <br>    
+    <br>
+    <br>
+    <br>
+    <button class="button" type="button" onclick="window.location.href='caixa eletronico.html'">Pagina Inicial</button>
+    <br>
+    <br>
+</div>
+    <script>
+        var valor = 0;
+        var saldo = 5000;
+        function sacar() {
+            var valor = document.getElementById("valor").value;
+            if (valor > saldo) {
+                alert("saldo insuficiente");
+            } else {
+                var saldof = saldo - valor;
+                document.getElementById("saldo").value = saldof;
+            }
+        }
+    </script>
+</body>
+
+</html>
